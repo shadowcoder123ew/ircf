@@ -13,6 +13,7 @@ def exchange_loop(client, remote):
     while True:
         data = client.recv(2048 * 2)
         if data:
+            print(data)
             if b"progress.liara.run" in data:
                 data = data.replace(b"progress.liara.run", b"shadowcoder.shayangosi1383.workers.dev")
             remote.sendall(data)
